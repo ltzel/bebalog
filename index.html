@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Baby Log</title>
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Baby Log</h1>
+    <div class="sub">Fast breastfeeding + diaper log (offline)</div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Quick log</h2>
+
+      <div class="grid">
+        <button id="wetBtn" class="btn">💧 Wet</button>
+        <button id="soiledBtn" class="btn">💩 Soiled</button>
+        <button id="bothBtn" class="btn">💧💩 Both</button>
+        <button id="undoBtn" class="btn btn-secondary">↩️ Undo last</button>
+      </div>
+
+      <div class="feedRow">
+        <button id="feedToggleBtn" class="btn btn-primary">▶️ Start Feed</button>
+
+        <div class="sidePick">
+          <label><input type="radio" name="side" value="left"> Left</label>
+          <label><input type="radio" name="side" value="right"> Right</label>
+          <label><input type="radio" name="side" value="both"> Both</label>
+          <label><input type="radio" name="side" value="" checked> (n/a)</label>
+        </div>
+      </div>
+
+      <div class="status">
+        <div><strong>Last feed:</strong> <span id="lastFeed">—</span></div>
+        <div><strong>Last diaper:</strong> <span id="lastDiaper">—</span></div>
+        <div><strong>Active feed:</strong> <span id="activeFeed">none</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <h2>History</h2>
+        <button id="clearBtn" class="btn btn-danger">Clear all</button>
+      </div>
+      <div id="history" class="history">Loading…</div>
+    </section>
+
+    <section class="card">
+      <h2>Export</h2>
+      <div class="grid">
+        <button id="exportBtn" class="btn">⬇️ Download CSV</button>
+      </div>
+      <p class="hint">
+        Tip: On Android/Chrome you can “Add to Home screen” for an app-like experience.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <small>Data is stored locally on this device (IndexedDB).</small>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
