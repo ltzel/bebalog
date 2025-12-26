@@ -15,6 +15,8 @@ main { padding: 12px; display: grid; gap: 12px; max-width: 720px; margin: 0 auto
 .btn-primary { border-color: #1a73e8; }
 .btn-secondary { background: #fafafa; }
 .btn-danger { border-color: #e53935; }
+.btn-small { padding: 8px 10px; font-size: 14px; border-radius: 10px; }
+
 .feedRow { display: grid; gap: 10px; }
 .sidePick { display: flex; flex-wrap: wrap; gap: 10px; font-size: 14px; color: #333; }
 .status { margin-top: 10px; font-size: 14px; color: #333; display: grid; gap: 6px; }
@@ -25,3 +27,57 @@ main { padding: 12px; display: grid; gap: 12px; max-width: 720px; margin: 0 auto
 .hint { color: #666; font-size: 13px; margin: 10px 0 0; }
 footer { padding: 14px; text-align: center; color: #777; }
 small { font-size: 12px; }
+
+/* Modal */
+.hidden { display: none !important; }
+
+.modalBackdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: grid; place-items: center;
+  padding: 14px;
+  z-index: 999;
+}
+
+.modal {
+  width: min(560px, 100%);
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.modalHeader h3 { margin: 0; font-size: 16px; }
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.field { display: grid; gap: 6px; }
+.field span { font-size: 12px; color: #666; }
+.field input, .field select {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-size: 16px;
+  background: #fff;
+}
+
+.fieldFull { grid-column: 1 / -1; }
+
+.modalActions {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
