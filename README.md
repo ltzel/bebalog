@@ -1,7 +1,17 @@
 # 👶 BebaLog
 
-**BebaLog** is a lightweight, offline-first baby activity tracker built as a simple PWA.
-It runs entirely in the browser using IndexedDB and works fully offline.
+**BebaLog** is a lightweight, offline-first baby activity tracker built as a simple Progressive Web App (PWA).
+
+It is a **client-only web application**, which means it needs to be hosted somewhere in order to be accessed — but it does **not** require any backend, server, or account.
+
+Anyone can use it directly by visiting:
+
+👉 **https://ltzel.github.io/bebalog**
+
+All data is stored **locally in the browser** using IndexedDB.  
+No data is sent to a server, and nothing is stored anywhere except the user’s own browser (e.g. Chrome, Firefox).
+
+Once loaded, BebaLog works fully offline and can be used on a device like a native app.
 
 ---
 
