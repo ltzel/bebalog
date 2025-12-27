@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beba Log</title>
+
+  <!-- Keep it out of search engines -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Beba Log</h1>
+    <div class="sub">Fast breastfeeding + diaper log (offline)</div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Quick log</h2>
+
+      <div class="grid">
+        <button id="wetBtn" class="btn">💧 Wet</button>
+        <button id="soiledBtn" class="btn">💩 Soiled</button>
+        <button id="bothBtn" class="btn">💧💩 Both</button>
+        <button id="undoBtn" class="btn btn-secondary">↩️ Undo last</button>
+      </div>
+
+      <div class="feedRow">
+        <button id="feedToggleBtn" class="btn btn-primary">▶️ Start Feed</button>
+
+        <div class="sidePick">
+          <label><input type="radio" name="side" value="left"> Left</label>
+          <label><input type="radio" name="side" value="right"> Right</label>
+          <label><input type="radio" name="side" value="both"> Both</label>
+          <label><input type="radio" name="side" value="" checked> (n/a)</label>
+        </div>
+
+        <button id="manualFeedBtn" class="btn">➕ Add Feed (manual)</button>
+      </div>
+
+      <div class="status">
+        <div><strong>Last feed:</strong> <span id="lastFeed">—</span></div>
+        <div><strong>Last diaper:</strong> <span id="lastDiaper">—</span></div>
+        <div><strong>Active feed:</strong> <span id="activeFeed">none</span></div>
+        <div id="dailyStats" class="dailyStats"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <h2>History</h2>
+        <button id="clearBtn" class="btn btn-danger">Clear all</button>
+      </div>
+      <div id="history" class="history">Loading…</div>
+    </section>
+
+    <section class="card">
+      <h2>Export</h2>
+      <div class="grid">
+        <button id="exportBtn" class="btn">⬇️ Download CSV</button>
+        <button id="importBtn" class="btn">⬆️ Restore CSV</button>
+        <input id="importFile" type="file" accept=".csv,text/csv" class="hidden" />
+      </div>
+      <p class="hint">
+        Tip: On Android/Chrome you can “Add to Home screen” for an app-like experience.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <small>Data is stored locally on this device (IndexedDB). No server.</small>
+  </footer>
+
+  <!-- Manual Feed Modal -->
+  <div id="manualModal" class="modalBackdrop hidden" role="dialog" aria-modal="true" aria-labelledby="manualTitle">
+    <div class="modal">
+      <div class="modalHeader">
+        <h3 id="manualTitle">Add manual feed</h3>
+        <button id="manualCloseBtn" class="btn btn-secondary btn-small" aria-label="Close">✕</button>
+      </div>
+
+      <div class="formGrid">
+        <label class="field">
+          <span>Date</span>
+          <input id="mfDate" type="date" />
+        </label>
+
+        <label class="field">
+          <span>Start time</span>
+          <input id="mfStart" type="time" />
+        </label>
+
+        <label class="field">
+          <span>End time</span>
+          <input id="mfEnd" type="time" />
+        </label>
+
+        <label class="field">
+          <span>Side</span>
+          <select id="mfSide">
+            <option value="">(none)</option>
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+            <option value="both">Both</option>
+          </select>
+        </label>
+
+        <label class="field fieldFull">
+          <span>Notes (optional)</span>
+          <input id="mfNotes" type="text" placeholder="e.g., added later" />
+        </label>
+      </div>
+
+      <div class="modalActions">
+        <button id="manualCancelBtn" class="btn btn-secondary">Cancel</button>
+        <button id="manualSaveBtn" class="btn btn-primary">Save</button>
+      </div>
+
+      <p class="hint" style="margin-top:10px;">
+        If end time is earlier than start time, it’s treated as crossing midnight.
+      </p>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

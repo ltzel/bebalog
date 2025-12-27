@@ -1,0 +1,119 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; background: #f6f7f9; color: #111; }
+header { padding: 16px; background: white; border-bottom: 1px solid #e6e6e6; }
+h1 { margin: 0 0 6px; font-size: 20px; }
+.sub { color: #666; font-size: 13px; }
+main { padding: 12px; display: grid; gap: 12px; max-width: 720px; margin: 0 auto; }
+.card { background: white; border: 1px solid #e6e6e6; border-radius: 12px; padding: 12px; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 10px 0; }
+.btn {
+  border: 1px solid #ddd; background: #fff; padding: 14px 12px; border-radius: 12px;
+  font-size: 16px; cursor: pointer;
+}
+.btn:active { transform: scale(0.99); }
+.btn-primary { border-color: #1a73e8; }
+.btn-secondary { background: #fafafa; }
+.btn-danger { border-color: #e53935; }
+.btn-small { padding: 8px 10px; font-size: 14px; border-radius: 10px; }
+
+.feedRow { display: grid; gap: 10px; }
+.sidePick { display: flex; flex-wrap: wrap; gap: 10px; font-size: 14px; color: #333; }
+.status { margin-top: 10px; font-size: 14px; color: #333; display: grid; gap: 6px; }
+.history { display: grid; gap: 8px; margin-top: 8px; }
+.item { border: 1px solid #eee; border-radius: 10px; padding: 10px; display: grid; gap: 4px; }
+.itemTop { display: flex; justify-content: space-between; gap: 10px; }
+.tag { font-size: 12px; color: #666; }
+.hint { color: #666; font-size: 13px; margin: 10px 0 0; }
+footer { padding: 14px; text-align: center; color: #777; }
+small { font-size: 12px; }
+
+/* Modal */
+.hidden { display: none !important; }
+
+.modalBackdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: grid; place-items: center;
+  padding: 14px;
+  z-index: 999;
+}
+
+.modal {
+  width: min(560px, 100%);
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  padding: 12px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.modalHeader h3 { margin: 0; font-size: 16px; }
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.field { display: grid; gap: 6px; }
+.field span { font-size: 12px; color: #666; }
+.field input, .field select {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 10px;
+  font-size: 16px;
+  background: #fff;
+}
+
+.fieldFull { grid-column: 1 / -1; }
+
+.modalActions {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.dailyStats{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.dailyStats .statItem{
+  flex: 1;
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.dailyStats .statValue{
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.dailyStats .statLabel{
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.dayHeader{
+  margin-top: 10px;
+  padding: 6px 4px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
