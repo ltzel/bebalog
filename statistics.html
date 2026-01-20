@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beba Log – Statistics</title>
+
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Statistics</h1>
+    <div class="sub">Overview of logged data</div>
+  </header>
+
+  <main>
+
+    <section class="card">
+  <div id="statsTabs" class="statsTabs">
+    <button class="btn btn-small btn-primary" data-view="daily">
+      Daily
+    </button>
+    <button class="btn btn-small" data-view="weekly">
+      Weekly
+    </button>
+    <button class="btn btn-small" data-view="monthly">
+      Monthly
+    </button>
+  </div>
+</section>
+  
+  
+   <section id="statsContainer"></section>
+
+    <section class="card">
+      <button class="btn btn-secondary" onclick="location.href='index.html'">
+        ⬅️ Back to log
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <small>Data is stored locally on this device.</small>
+  </footer>
+
+  <script type="module" src="stats.js"></script>
+
+</body>
+</html>

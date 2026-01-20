@@ -117,3 +117,13 @@ small { font-size: 12px; }
   color: #333;
   border-bottom: 1px solid #eee;
 }
+
+.statsTabs {
+  display: flex;
+  gap: 8px;
+}
+
+.statsTabs .btn {
+  flex: 1;
+}
+
