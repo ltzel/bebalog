@@ -13,6 +13,11 @@ No data is sent to a server, and nothing is stored anywhere except the user’s 
 
 Once loaded, BebaLog works fully offline and can be used on a device like a native app.
 
+For local testing execute inside root folder:
+py -m http.server 8000
+
+Open with browser http://localhost:8000
+
 ---
 
 # ❤️ Why BebaLog Exists
@@ -62,6 +67,15 @@ Counts are:
 - Each day has a clear header (e.g. *Mon, 25 Mar 2025*)
 - Events are ordered newest → oldest
 - Individual entries can be deleted
+
+---
+
+### 📈 Statistics (Daily, Weekly, Monthly)
+- View summarized activity over time
+Displays:
+- 🍼 **Feeds**
+- ⏱️ **Total feeding time**
+- 💧/💩 **Diapers**
 
 ---
 
